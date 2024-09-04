@@ -8,7 +8,13 @@ public class GameManager : MonoBehaviour
     public Transform SpawnPoint;
     public int BricksInARow;
     public int HowManyRows; 
-    public Vector2 Offset; 
+    public Vector2 Offset;
+    public int Lives;
+    public int Score;
+    public GameObject BallPrefab;
+    public Transform BallSpawn;
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +28,39 @@ public class GameManager : MonoBehaviour
         
 
         }
-        
+        Instantiate(BallPrefab, BallSpawn.position, Quaternion.identity);
     }
 
-  
-    // Update is called once per frame
-    void Update()
+    public void IncreaseScore()
     {
-        
+        Score += 100;
+        if(Score >= HowManyRows * BricksInARow * 100)
+        {
+            EndGame(true);
+        }
+    }
+    public void LoseLife()
+    {
+        Lives--; 
+        if(Lives <= 0)
+        {
+            print("Game over");
+            EndGame(false) ; 
+        }
+        else
+        {
+            Instantiate(BallPrefab, BallSpawn.transform.position, Quaternion.identity);
+        }
+    }
+    public void EndGame(bool winOrLose)
+    {
+        if (winOrLose == true)
+        {
+            WinScreen.SetActive(true);
+        }
+        else
+        {
+            LoseScreen.SetActive(true);
+        }
     }
 }
