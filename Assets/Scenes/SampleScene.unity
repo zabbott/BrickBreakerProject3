@@ -163,10 +163,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 57277166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e78e22ad6852d4788db73ec920f18c, type: 3}
+  m_Script: {fileID: 11500000, guid: 084932e6d35c0ef43922f9aab2b53bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Brick: {fileID: 1406109242832191545, guid: 60e8970cb166549438ab57bafb19d3d6, type: 3}
+  SpawnPoint: {fileID: 420103411}
+  BricksInARow: 10
+  HowManyRows: 3
+  Offset: {x: 1.5, y: 1}
 --- !u!1 &420103410
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 420103410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.41, y: 4.12, z: 0}
+  m_LocalPosition: {x: -8.28, y: 2.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -675,6 +679,8 @@ GameObject:
   - component: {fileID: 2074643929}
   - component: {fileID: 2074643928}
   - component: {fileID: 2074643927}
+  - component: {fileID: 2074643931}
+  - component: {fileID: 2074643930}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -784,6 +790,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074643930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074643926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 746bfb799863cb3448ca7029bfefa554, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerControls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &2074643931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074643926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc62d70ba3e530f44bb1f485a0fe52dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3e50f94a-a001-43be-816e-3ac9717f3b1c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
