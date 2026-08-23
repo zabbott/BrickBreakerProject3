@@ -9,13 +9,13 @@ public class BallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RB2D.velocity = new Vector2(10, 10);
+        RB2D.linearVelocity = new Vector2(10, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
-        RB2D.velocity = Vector2.ClampMagnitude(RB2D.velocity, maxSpeed);
+        RB2D.linearVelocity = Vector2.ClampMagnitude(RB2D.linearVelocity, maxSpeed);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

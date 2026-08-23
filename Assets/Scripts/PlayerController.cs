@@ -41,11 +41,11 @@ public class PlayerController : MonoBehaviour
         if (ShouldBeMoving)
         {
             float direction = MoveAction.ReadValue<float>();
-            RB.velocity = new Vector2(direction * Speed, 0);
+            RB.linearVelocity = new Vector2(direction * Speed, 0);
         }
         else
         {
-            RB.velocity = Vector2.zero;
+            RB.linearVelocity = Vector2.zero;
 
         }
     }
